@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var trailController = require('./controllers/trail');
 var userController = require('./controllers/user');
-var placeController = require('./controllers/place');
+var siteController = require('./controllers/site');
 var passport = require('passport');
 var authController = require('./controllers/auth');
 
@@ -32,9 +32,9 @@ router.route('/users')
   .post(userController.postUser)
   .get(authController.isAuthenticated, userController.getUsers);
 
-router.route('/places')
-  .post(authController.isAuthenticated, placeController.postPlace)
-  .get(authController.isAuthenticated, placeController.getPlaces)
+router.route('/sites')
+  .post(authController.isAuthenticated, siteController.postSite)
+  .get(authController.isAuthenticated, siteController.getSites)
 
 app.use('/api', router);
 

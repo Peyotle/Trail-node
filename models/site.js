@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-var TrailSchema = new mongoose.Schema({
+var SiteSchema = new mongoose.Schema({
   type: String,
   name: String,
-  grade: Number,
+  category: Number,
   coordinates: Array,
   userId: String
 });
 
-module.exports = mongoose.model('Trail', TrailSchema);
+module.exports = mongoose.model('Site', SiteSchema);

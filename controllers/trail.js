@@ -8,7 +8,8 @@ exports.postTrail = function(req, res) {
   trail.grade = req.body.grade;
   trail.coordinates = req.body.coordinates;
   trail.userId = req.user._id;
-
+  trail.type = "Trail"
+  
   trail.save(function(err) {
     if (err)
       res.send(err);
